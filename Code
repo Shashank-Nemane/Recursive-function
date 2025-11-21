@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+int n,r;
+start:
+N:
+printf("Enter n for nCr operation: ");
+scanf("%d",&n);
+if(n<0)
+{
+printf("Invalid input\n Enter valid input.\n");
+goto N;
+}
+R:
+printf("Enter r for nCr operation: ");
+scanf("%d",&r);
+if(r<0)
+{
+printf("Invalid input\n Enter valid input.\n");
+goto R;
+}
+if(r>n)
+{
+printf("Invalid input\n Enter valid input.\n");
+goto start;
+}
+
+printf("C(%d,%d) = %d",n,r,nCr(n,r));
+return 0;
+}
+int nCr(int n,int r)
+{
+  if (n==r || r==0)
+  {
+    return 1;
+  }
+   return nCr(n-1,r-1) + nCr(n-1,r);
+}
